@@ -109,7 +109,7 @@ function App() {
 			}
 		} finally {
 			setLoading(false);
-			setTimeout(() => setDisabled(false), 1000);
+			setTimeout(() => setDisabled(false), 3000);
 		}
 	};
 
