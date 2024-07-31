@@ -137,9 +137,12 @@ function App() {
 			console.log("Stop request successful:", response.data);
 			console.log(`Response data code is.. ${response.data.code}`);
 			console.log(`Response data message is.. ${response.data.data}`);
-
 			setResponseCode(response.data.code);
-			setResponseData(response.data.data);
+			if (typeof response.data.data === "object") {
+				setResponseData(JSON.stringify(response.data.data));
+			} else {
+				setResponseData(response.data.data);
+			}
 
 			// setResponseData(response.data);
 		} catch (error) {
